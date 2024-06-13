@@ -173,6 +173,8 @@ main {
     border-bottom: 10px solid var(--book-cover);
     
     font-size: 1.1rem;
+
+    box-shadow: #303030 5px 5px 10px;
 }
 .gap {
     padding: 1vh 1vw;
