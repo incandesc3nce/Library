@@ -20,11 +20,11 @@ addBookToLibrary(book1);
 addBookToLibrary(book2);
 addBookToLibrary(book3);
 
-
+const header = document.querySelector('header');
 const main = document.querySelector('main');
 
 const updateID = (bookElement) => {
-    bookElement.setAttribute('id', `book_${myLibrary.indexOf(book) + 1}`)
+    bookElement.id = `book_${myLibrary.indexOf(book) + 1}`;
 };
 
 const drawBook = (book) => {
@@ -74,4 +74,56 @@ const drawBook = (book) => {
 
 myLibrary.forEach(book => {
     drawBook(book);
+});
+
+
+const addNewBook = document.querySelector('button.new-book')
+let formCreated = false;
+
+const form = document.createElement('form');
+    form.action = 'submit';
+    form.innerHTML = `
+    <form action="submit">
+            <section class="form-title">
+                <label for="book_title">Title</label>
+                <input type="text" id="book_title" name="book_title">
+            </section>
+            <section class="form-author">
+                <label for="book_author">Author</label>
+                <input type="text" id="book_author" name="book_author">
+            </section>
+            <section class="form-pages">
+                <label for="book_pages">Pages</label>
+                <input type="text" id="book_pages" name="book_pages">
+            </section>
+            <section class="form-read">
+                <label for="book_read">Did Read</label>
+                <input type="checkbox" id="book_read" name="book_read">
+            </section>
+            <section class="form-notes">
+                <label for="book_notes">Notes</label>
+                <textarea id="book_notes" name="book_notes"></textarea>
+            </section>
+            <section class="form-submit">
+                <button type="submit" id="add">Add</button>
+            </section>
+        </form>
+    `;
+
+addNewBook.addEventListener('click', () => {
+    if (!formCreated) {
+        const arrow = document.querySelector('#arrow');
+        arrow.textContent = '▼';
+
+        header.appendChild(form);
+
+        formCreated = true;
+    } else if (formCreated) {
+        const arrow = document.querySelector('#arrow');
+        arrow.textContent = '◀';
+        
+        header.removeChild(form);
+
+        formCreated = false;
+    }
 });

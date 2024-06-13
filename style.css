@@ -87,11 +87,65 @@ header h1 {
 
     padding-top: 5vh;
 
-    width: 15%;
+    width: 15ch;
 }
 .new-book > span:first-child {
     text-decoration: underline;
 }
+
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 2vh;
+
+    margin: 2vh 0;
+    width: 18em;
+}
+form section {
+    display: flex;
+    justify-content: space-between;
+}
+
+.form-read {
+    justify-content: flex-start;
+    gap: 1vw;
+}
+.form-notes {
+    display: flex;
+    flex-direction: column;
+}
+.form-notes textarea {
+    height: 10vh;
+}
+
+form label {
+    font-size: 1rem;
+}
+form input {
+    border: 0;
+    border-radius: 15px;
+}
+form input:focus, form textarea:focus {
+    outline: 2px solid #53b2ff;
+}
+
+.form-submit {
+    display: flex;
+    justify-content: center;
+}
+
+#add {
+    background-color: var(--book-cover);
+    color: #fff;
+    
+
+    border: 0;
+    border-radius: 10px;
+
+    font-size: 1.3rem;
+    padding: 0.3vh 1.2vw;
+}
+
 
 main {
     grid-row: 2/3;
@@ -111,8 +165,8 @@ main {
     border-top-left-radius: 15px;
     border-bottom-left-radius: 15px;
     border-left: 15px solid var(--book-cover);
-    border-top: 7px solid var(--book-cover);
-    border-bottom: 7px solid var(--book-cover);
+    border-top: 10px solid var(--book-cover);
+    border-bottom: 10px solid var(--book-cover);
     
     font-size: 1.1rem;
 }
