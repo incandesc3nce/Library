@@ -233,3 +233,21 @@ footer p {
 footer a {
     color: #ffa7b6;
 }
+
+@media only screen and (max-width: 1000px) {
+    header {
+        padding: 3vh 2vw 0 2vw;
+    }
+
+    main {
+        grid-template-columns: repeat(2, 1fr);
+
+        padding-right: 1rem;
+    }
+}
+
+@media only screen and (max-width: 620px) {
+    main {
+        grid-template-columns: repeat(1, 1fr);
+    }
+}
