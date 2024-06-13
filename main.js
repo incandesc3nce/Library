@@ -23,7 +23,11 @@ addBookToLibrary(book3);
 
 const main = document.querySelector('main');
 
-myLibrary.forEach(book => {
+const updateID = (bookElement) => {
+    bookElement.setAttribute('id', `book_${myLibrary.indexOf(book) + 1}`)
+};
+
+const drawBook = (book) => {
     const newBook = document.createElement('article');
     newBook.classList.add('card');
 
@@ -63,7 +67,11 @@ myLibrary.forEach(book => {
     info.appendChild(bookNotes);
 
     newBook.appendChild(info);
+    newBook.setAttribute('id', `book_${myLibrary.indexOf(book) + 1}`)
 
     main.appendChild(newBook);
+};
 
+myLibrary.forEach(book => {
+    drawBook(book);
 });
