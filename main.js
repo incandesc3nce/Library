@@ -143,7 +143,15 @@ addNewBook.addEventListener('click', () => {
             drawBook(newBook);
 
             form.reset();
+        });
 
+        const numberInput = document.querySelector("#book_pages");
+        const invalidChars = ["-", "+", "e"];
+
+        numberInput.addEventListener("keydown", (e) => {
+            if (invalidChars.includes(e.key)) {
+                e.preventDefault();
+            }
         });
     } else if (formCreated) {
         const arrow = document.querySelector('#arrow');
