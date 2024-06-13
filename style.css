@@ -39,6 +39,10 @@ h6 {
 }
 /* reset end */
 
+:root {
+    --book-cover: #723700;
+}
+
 * {
     font-family: "Merriweather";
 }
@@ -74,8 +78,12 @@ main {
     color: #000;
     background-color: #f9ffc0;
 
-    border-radius: 15px;
-    border-left: 15px solid #633000;
+    border-top-left-radius: 15px;
+    border-bottom-left-radius: 15px;
+    border-left: 15px solid var(--book-cover);
+    border-top: 7px solid var(--book-cover);
+    border-bottom: 7px solid var(--book-cover);
+    
     font-size: 1.1rem;
 }
 .gap {
