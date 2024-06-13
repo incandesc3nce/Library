@@ -124,9 +124,13 @@ form label {
 form input {
     border: 0;
     border-radius: 15px;
+    text-indent: 9px;
 }
 form input:focus, form textarea:focus {
     outline: 2px solid #53b2ff;
+}
+form input[type="checkbox"] {
+    outline: none;
 }
 
 .form-submit {

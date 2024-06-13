@@ -91,15 +91,15 @@ const form = document.createElement('form');
     <form action="submit">
             <section class="form-title">
                 <label for="book_title">Title</label>
-                <input type="text" id="book_title" name="book_title">
+                <input type="text" id="book_title" minlength="1" name="book_title" required>
             </section>
             <section class="form-author">
                 <label for="book_author">Author</label>
-                <input type="text" id="book_author" name="book_author">
+                <input type="text" id="book_author" name="book_author" minlength="3" required>
             </section>
             <section class="form-pages">
                 <label for="book_pages">Pages</label>
-                <input type="text" id="book_pages" name="book_pages">
+                <input type="number" min="1" id="book_pages" name="book_pages" required>
             </section>
             <section class="form-read">
                 <label for="book_read">Did Read</label>
