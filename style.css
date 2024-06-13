@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@0,300;0,400;0,700;0,900;1,300;1,400;1,700;1,900&display=swap');
+
 /* reset */
 * {
   margin: 0;
@@ -36,3 +38,80 @@ h6 {
   isolation: isolate;
 }
 /* reset end */
+
+* {
+    font-family: "Merriweather";
+}
+header h1, footer {
+    text-align: center;
+}
+
+body {
+    height: 100vh;
+    background-color: #172554;
+    color: #fff;
+
+    display: grid;
+    grid-template-rows: 1fr 2fr 1fr;
+    grid-template-columns: repeat(3, 1fr);
+}
+
+header {
+    grid-column: 1/4;
+}
+main {
+    grid-row: 2/3;
+    grid-column: 1/4;
+
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+}
+
+.card {
+    margin: 2vh;
+
+    color: #000;
+    background-color: #f9ffc0;
+
+    border-radius: 15px;
+    border-left: 15px solid #633000;
+    font-size: 1.1rem;
+}
+.gap {
+    padding: 1vh 1vw;
+}
+.card .title, .card .author {
+    text-align: center;
+}
+.card .pages, .card .read, .card .before-notes {
+    font-weight: 650;
+}
+.card .read {
+    display: block;
+    background-color: #00000000;
+    border: 0;
+    border-radius: 10px;
+}
+.card .read:hover {
+    cursor: pointer;
+}
+.card .notes {
+    text-align: justify;
+}
+
+
+footer {
+    grid-row: 3;
+    grid-column: 1/4;
+
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+}
+footer p {
+    padding-bottom: 1vh;
+}
+footer a {
+    color: #ffa7b6;
+}
