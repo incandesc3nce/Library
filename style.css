@@ -88,10 +88,16 @@ header h1 {
     padding-top: 5vh;
 
     width: 15ch;
+
+    transition-duration: 0.2s;
 }
 .new-book > span:first-child {
     text-decoration: underline;
 }
+.new-book:hover {
+    text-shadow: #ffffff 0px 0px 5px;
+}
+
 
 form {
     display: flex;
@@ -148,6 +154,13 @@ form input[type="checkbox"] {
 
     font-size: 1.3rem;
     padding: 0.3vh 1.2vw;
+    transition-duration: 0.2s;
+}
+#add:hover {
+    background-color: #b15e10;
+}
+#add:active {
+    transform: scale(0.9);
 }
 
 
