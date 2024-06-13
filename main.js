@@ -154,7 +154,11 @@ addNewBook.addEventListener('click', () => {
 
             drawBook(newBook);
 
-            form.reset();
+            bookTitle.value = '';
+            bookAuthor.value = '';
+            bookPages.value = '';
+            bookRead.checked = false;
+            bookNotes.value = '';
         });
 
         const numberInput = document.querySelector("#book_pages");
