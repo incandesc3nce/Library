@@ -196,6 +196,28 @@ main {
     text-align: justify;
 }
 
+.delete-container {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+.card .delete {
+    background-color: #00000000;
+    color : #fa6464;
+    text-shadow: #000000 0px 0px 5px;
+
+    border: 0;
+
+    width: 1rem;
+    
+
+    font-size: 2.5rem;
+    font-weight: 600;
+    
+    position: absolute;
+    
+}
+
 
 footer {
     grid-row: 3;

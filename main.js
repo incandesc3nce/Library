@@ -23,13 +23,26 @@ addBookToLibrary(book3);
 const header = document.querySelector('header');
 const main = document.querySelector('main');
 
-const updateID = (bookElement) => {
-    bookElement.id = `book_${myLibrary.indexOf(book) + 1}`;
-};
 
 const drawBook = (book) => {
     const newBook = document.createElement('article');
     newBook.classList.add('card');
+
+    const deleteContainer = document.createElement('div');
+    deleteContainer.classList.add('delete-container');
+    const deleteButton = document.createElement('button');
+    deleteButton.classList.add('delete');
+    deleteButton.title = 'Remove book';
+    deleteButton.innerHTML = '&#11198;';
+
+    deleteContainer.appendChild(deleteButton);
+    newBook.appendChild(deleteContainer);
+
+    deleteButton.addEventListener('click', () => {
+        myLibrary.splice(myLibrary.indexOf(book), 1);
+        newBook.remove();
+    });
+
 
     const bookTitle = document.createElement('h2');
     bookTitle.textContent = book.title;
@@ -72,7 +85,6 @@ const drawBook = (book) => {
     info.appendChild(bookNotes);
 
     newBook.appendChild(info);
-    newBook.setAttribute('id', `book_${myLibrary.indexOf(book) + 1}`)
 
     main.appendChild(newBook);
 };
