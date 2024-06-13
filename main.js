@@ -103,7 +103,7 @@ form.innerHTML = `
     <form action="submit">
             <section class="form-title">
                 <label for="book_title">Title</label>
-                <input type="text" id="book_title" minlength="1" name="book_title" required>
+                <input type="text" id="book_title" minlength="1" name="book_title" required >
             </section>
             <section class="form-author">
                 <label for="book_author">Author</label>
@@ -148,6 +148,12 @@ addNewBook.addEventListener('click', () => {
             const bookPages = document.querySelector('#book_pages');
             const bookRead = document.querySelector('#book_read');
             const bookNotes = document.querySelector('#book_notes');
+
+            if (bookTitle.value.trim() === '' || bookAuthor.value.trim() === '' || bookPages.value.trim() === '') {
+                alert('Please fill in all required fields.');
+                event.preventDefault();
+                return;
+            }
 
             const newBook = new Book(bookTitle.value, bookAuthor.value, bookPages.value, bookRead.checked, bookNotes.value);
             addBookToLibrary(newBook);
