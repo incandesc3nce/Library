@@ -52,6 +52,11 @@ const drawBook = (book) => {
     const didRead = document.createElement('button');
     didRead.textContent = `Did read: ${book.isRead ? '✅' : '❌'}`;
     didRead.classList.add('read');
+    didRead.addEventListener('click', () => {
+        book.isRead = !book.isRead;
+        didRead.textContent = `Did read: ${book.isRead ? '✅' : '❌'}`;
+    });
+
 
     const beforeNotes = document.createElement('p');
     beforeNotes.textContent = 'Notes:';
