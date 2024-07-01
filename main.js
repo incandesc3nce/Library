@@ -78,7 +78,7 @@ const drawBook = (book) => {
     beforeNotes.classList.add('before-notes');
 
     const bookNotes = document.createElement('p');
-    bookNotes.textContent = book.notes;
+    bookNotes.textContent = book.notes === '' ? 'No notes' : book.notes;
     bookNotes.classList.add('notes');
 
     info.appendChild(bookPages);
@@ -140,22 +140,11 @@ addNewBook.addEventListener('click', () => {
 
         form.addEventListener('submit', (event) => {
             event.preventDefault();
-        });
-        const add = document.querySelector('#add');
-
-        add.addEventListener('click', (event) => {
-            event.preventDefault();
             const bookTitle = document.querySelector('#book_title');
             const bookAuthor = document.querySelector('#book_author');
             const bookPages = document.querySelector('#book_pages');
             const bookRead = document.querySelector('#book_read');
             const bookNotes = document.querySelector('#book_notes');
-
-            if (bookTitle.value.trim() === '' || bookAuthor.value.trim() === '' || bookPages.value.trim() === '') {
-                alert('Please fill in all required fields.');
-                event.preventDefault();
-                return;
-            }
 
             const newBook = new Book(bookTitle.value, bookAuthor.value, bookPages.value, bookRead.checked, bookNotes.value);
             addBookToLibrary(newBook);
